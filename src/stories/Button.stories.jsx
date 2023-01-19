@@ -1,14 +1,15 @@
 import React from 'react';
 
-import { Button } from './Button';
+import { Button } from '../components/Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
+  title: 'Components/Button',
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: { control: 'color'},
+    handleClick: { action: "handleClick"}
   },
 };
 
@@ -37,4 +38,18 @@ export const Small = Template.bind({});
 Small.args = {
   size: 'small',
   label: 'Button',
+};
+
+export const Danger = Template.bind({});
+Danger.args = {
+  backgroundColor: "red", 
+  label: "Danger", 
+  size: "medium",
+};
+
+export const LongLabel = Template.bind({});
+LongLabel.args = {
+  backgroundColor: "green", 
+  label: "This is a very long label", 
+  size: "medium",
 };
